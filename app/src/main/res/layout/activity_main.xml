@@ -12,18 +12,37 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <!--<include layout="@layout/toolbar"/>-->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
-            <com.jaredrummler.materialspinner.MaterialSpinner
-                android:layout_marginRight="40dp"
-                app:ms_background_color="@android:color/transparent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            <!--<Spinner-->
+                <!--android:layout_marginRight="40dp"-->
+                <!--android:spinnerMode="dropdown"-->
+                <!--android:id="@+id/spinner"-->
+                <!--android:layout_width="240dp"-->
+                <!--android:layout_height="wrap_content"-->
+            <!--/>-->
+            <!--&lt;!&ndash;<com.jaredrummler.materialspinner.MaterialSpinner&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_marginRight="40dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;app:ms_background_color="@android:color/transparent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/spinner"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content"/>&ndash;&gt;-->
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_marginRight="15dp"
+                android:textColor="@android:color/white"
+                android:text="test"
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="normal"
+                />
         </android.support.v7.widget.Toolbar>
         <FrameLayout
             android:layout_below="@+id/toolbar"

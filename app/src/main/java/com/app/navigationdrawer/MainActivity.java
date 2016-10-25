@@ -13,11 +13,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jaredrummler.materialspinner.MaterialSpinner;
+import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private Spinner mSpinner;
+    MaterialBetterSpinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,27 +40,75 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         initNavigationDrawer();
-        final MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.spinner);
-        spinner.setOnClickListener(new View.OnClickListener() {
+        String[] itemCountry = {
+                "India",
+                "UK",
+                "US"};
+        spinner =   (MaterialBetterSpinner)findViewById(R.id.spinner);
+        ArrayAdapter<String> itemMenuAdapter = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_dropdown_item_1line, itemCountry);;
+//        countrySpinner.setTypeface(Typeface.createFromAsset(getActivity().getAssets(),"fonts/Amaranth-Regular.ttf"));
+        spinner.setAdapter(itemMenuAdapter);
+        spinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                spinner.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),android.R.color.white));
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(),"Clicked "+i,Toast.LENGTH_SHORT).show();
             }
         });
-        spinner.setItems("Ice Cream Sandwich");
-        spinner.setOnNothingSelectedListener(new MaterialSpinner.OnNothingSelectedListener() {
-            @Override
-            public void onNothingSelected(MaterialSpinner spinner) {
-                spinner.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),android.R.color.transparent));
-            }
-        });
-        spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
-            @Override public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
-                Snackbar.make(view, "Clicked " + item, Snackbar.LENGTH_LONG).show();
-                spinner.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),android.R.color.transparent));
-            }
-        });
-//        mSpinner = (Spinner) findViewById(R.id.spinner_rss);
+//        // Spinner element
+//        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+//
+//        // Spinner Drop down elements
+//        List<String> languages = new ArrayList<String>();
+//        languages.add("Andorid Andorid Andorid Andorid Andorid Andorid Andorid Andorid");
+//        languages.add("IOS");
+//        languages.add("PHP");
+//        languages.add("Java");
+//        languages.add(".Net");
+//
+//
+//        // Creating adapter for spinner
+//        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.spinner_row, languages);
+//
+//        // Drop down layout style - list view with radio button
+//        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        // attaching data adapter to spinner
+//        spinner.setAdapter(dataAdapter);
+//
+//        // Spinner click listener
+//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+//        final MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.spinner);
+//        spinner.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                spinner.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),android.R.color.white));
+//            }
+//        });
+//        spinner.setItems("Ice Cream Sandwich");
+//        spinner.setOnNothingSelectedListener(new MaterialSpinner.OnNothingSelectedListener() {
+//            @Override
+//            public void onNothingSelected(MaterialSpinner spinner) {
+//                spinner.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),android.R.color.transparent));
+//            }
+//        });
+//        spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+//            @Override public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+//                Snackbar.make(view, "Clicked " + item, Snackbar.LENGTH_LONG).show();
+//                spinner.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),android.R.color.transparent));
+//            }
+//        });
+////        mSpinner = (Spinner) findViewById(R.id.spinner_rss);
 //
 //        String[] items = new String[]{
 //          "testtesttesttesttesttestesttesttestttesttest","testesttesttesttest1","tetesttesttestst3"
