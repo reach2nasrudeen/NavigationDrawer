@@ -1,4 +1,4 @@
-package com.app.navigationdrawer;
+package com.app.navigationdrawer.Fragment;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.app.navigationdrawer.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment1 extends Fragment {
+public class Fragment3 extends Fragment {
 
 
-    public Fragment1() {
+    public Fragment3() {
         // Required empty public constructor
     }
 

@@ -20,6 +20,36 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            <RelativeLayout
+                android:layout_margin="5dp"
+                android:id="@+id/spinnerLayout"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/icon"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/drop_down_arrow"
+                    android:layout_width="45dp"
+                    android:layout_height="65dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:padding="15dp"
+                    />
+                <TextView
+                    android:layout_toLeftOf="@+id/icon"
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="BLOCK A BLOCK A BLOCK A BLOCK A BLOCK A BLOCK A BLOCK A BLOCK A"
+                    android:id="@+id/dropDownTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
             <!--<Spinner-->
                 <!--android:layout_marginRight="40dp"-->
                 <!--android:spinnerMode="dropdown"-->
@@ -33,16 +63,16 @@
                 <!--&lt;!&ndash;android:id="@+id/spinner"&ndash;&gt;-->
                 <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
                 <!--&lt;!&ndash;android:layout_height="wrap_content"/>&ndash;&gt;-->
-            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:layout_marginRight="15dp"
-                android:textColor="@android:color/white"
-                android:text="test"
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:met_floatingLabel="normal"
-                />
+            <!--<com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--android:layout_marginRight="15dp"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:text="test"-->
+                <!--android:id="@+id/spinner"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:met_floatingLabel="normal"-->
+                <!--/>-->
         </android.support.v7.widget.Toolbar>
         <FrameLayout
             android:layout_below="@+id/toolbar"

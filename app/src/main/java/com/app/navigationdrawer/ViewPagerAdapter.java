@@ -4,6 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.app.navigationdrawer.Fragment.Fragment1;
+import com.app.navigationdrawer.Fragment.Fragment2;
+import com.app.navigationdrawer.Fragment.Fragment3;
+
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     int numTabs;
